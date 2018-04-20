@@ -6,14 +6,12 @@
 </head>
 <body>
 	<form id="login" action="login.php" method="post">
-		<input id="login-login" type="text" name="login" required />
-		<input id="login-passw" type="password" name="pass" required />
+		Login:<input id="login-login" type="text" name="login" required />
+		Password:<input id="login-passw" type="password" name="pass" required />
 		<span>
 			<input type="submit" value="Log in" />
-			<input type="button" value="Register" onclick="location.href='register.php'" />
+			<input type="button" value="Register" onclick="location.href='view-register.php'" />
 		</span>
 	</form>
-
-	<script type="text/javascript" src="javascript/jquery.js"></script>
 </body>
 </html>
