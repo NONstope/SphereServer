@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+form#login {
+    width: 500px;
+    border: 10px outset;
+    padding: 20px;
+    margin: auto;
+    margin-top: 10%;
+    text-align: center;
+}
+
+form#login input[type="text"], form#login input[type="password"] {
+    width: 90%;
+    padding: 10px 0;
+    margin: 5px;
+    border: 2px solid;
+    border-radius: 10px;
+}
+
+form#login input[type="submit"], form#login input[type="button"] {
+    width: 45%;
+    padding: 10px 0;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+a.link-button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+    color: initial;
+
+    width: 45%;
+    padding: 10px 0;
+    margin: 5px;
+    border-radius: 10px;
+}
