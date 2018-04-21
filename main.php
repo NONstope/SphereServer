@@ -1,6 +1,7 @@
 <?php
 require_once("configs/config-smarty.php");
 require_once("configs/config-db.php");
+session_start();
 
 $first_l = $_GET["first"];
 $first_u = strtoupper($first_l);

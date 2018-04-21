@@ -16,7 +16,7 @@
         <ul class="nav navbar-nav">
           <li class="active"><a href="#">Home</a></li>
           <li><a href="#">About</a></li>
-          <li><a href="#">Exit</a></li>
+          <li><a href="logic-exit.php">Exit</a></li>
         </ul>
       </div>
     </nav>
