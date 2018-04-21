@@ -17,7 +17,7 @@ function tryLogin() {
                         alert("Incorrect login or password");
                         break;
                     case "Success":
-                        location.href = "main.php";
+                        location.href = "main.php?first=a";
                         break;
                   }
               });

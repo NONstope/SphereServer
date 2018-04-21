@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2018-04-21 09:57:26
+/* Smarty version 3.1.30, created on 2018-04-21 11:11:07
   from "C:\wamp64\www\statserver\smarty\templates\login.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5adb0b06453380_44375831',
+  'unifunc' => 'content_5adb1c4b790137_86972750',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '263087d250d77db43e8c6fc035b9c5aa57926339' => 
     array (
       0 => 'C:\\wamp64\\www\\statserver\\smarty\\templates\\login.tpl',
-      1 => 1524304591,
+      1 => 1524305035,
       2 => 'file',
     ),
   ),
@@ -20,13 +20,13 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5adb0b06453380_44375831 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5adb1c4b790137_86972750 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
 <head>
     <title>Sphere</title>
-    <link rel="stylesheet" type="text/css" href="styles-css/main.css"/>
+    <link rel="stylesheet" type="text/css" href="styles-css/signing.css"/>
 </head>
 <body>
     <form id="login">
