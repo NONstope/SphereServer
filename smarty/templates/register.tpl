@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Sphere</title>
-    <link rel="stylesheet" type="text/css" href="styles-css/main.css"/>
+    <link rel="stylesheet" type="text/css" href="styles-css/signing.css"/>
 </head>
 <body>
     <form id="login">
