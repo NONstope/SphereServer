@@ -15,7 +15,7 @@
         </div>
         <ul class="nav navbar-nav">
           <li class="active"><a href="main.php?first=a">Home</a></li>
-          <li><a href="#">About</a></li>
+          <li><a href="view-about.php">About</a></li>
           <li><a href="logic-exit.php">Exit</a></li>
         </ul>
       </div>
@@ -25,7 +25,7 @@
         <div id="view-app-desc" class="container">
             <form action="remove-app.php" method="post">
                 <h3>Info about {$app.name}</h3>
-                {if !$admin}
+                {if $admin}
                     <input type="hidden" name="appid" value="{$app.id}">
                     <input type="submit" value="Exclude from statistics" />
                 {/if}
@@ -49,7 +49,7 @@
                             <strong>
                                 <em>User: {$data.login}</em>
                             </strong>
-                            {if !$admin}
+                            {if $admin}
                             <input type="submit" value="Remove" />
                             {/if}
                         </p>

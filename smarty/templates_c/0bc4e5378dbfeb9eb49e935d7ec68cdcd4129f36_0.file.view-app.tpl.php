@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2018-04-21 17:19:51
+/* Smarty version 3.1.30, created on 2018-04-21 17:38:22
   from "C:\wamp64\www\statserver\smarty\templates\view-app.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5adb72b755ca16_75850347',
+  'unifunc' => 'content_5adb770e4be634_54283565',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0bc4e5378dbfeb9eb49e935d7ec68cdcd4129f36' => 
     array (
       0 => 'C:\\wamp64\\www\\statserver\\smarty\\templates\\view-app.tpl',
-      1 => 1524331188,
+      1 => 1524332244,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5adb72b755ca16_75850347 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5adb770e4be634_54283565 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -39,7 +39,7 @@ function content_5adb72b755ca16_75850347 (Smarty_Internal_Template $_smarty_tpl)
         </div>
         <ul class="nav navbar-nav">
           <li class="active"><a href="main.php?first=a">Home</a></li>
-          <li><a href="#">About</a></li>
+          <li><a href="view-about.php">About</a></li>
           <li><a href="logic-exit.php">Exit</a></li>
         </ul>
       </div>
@@ -50,7 +50,7 @@ function content_5adb72b755ca16_75850347 (Smarty_Internal_Template $_smarty_tpl)
             <form action="remove-app.php" method="post">
                 <h3>Info about <?php echo $_smarty_tpl->tpl_vars['app']->value['name'];?>
 </h3>
-                <?php if (!$_smarty_tpl->tpl_vars['admin']->value) {?>
+                <?php if ($_smarty_tpl->tpl_vars['admin']->value) {?>
                     <input type="hidden" name="appid" value="<?php echo $_smarty_tpl->tpl_vars['app']->value['id'];?>
 ">
                     <input type="submit" value="Exclude from statistics" />
@@ -84,7 +84,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['data']->value) {
                                 <em>User: <?php echo $_smarty_tpl->tpl_vars['data']->value['login'];?>
 </em>
                             </strong>
-                            <?php if (!$_smarty_tpl->tpl_vars['admin']->value) {?>
+                            <?php if ($_smarty_tpl->tpl_vars['admin']->value) {?>
                             <input type="submit" value="Remove" />
                             <?php }?>
                         </p>

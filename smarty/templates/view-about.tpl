@@ -14,8 +14,8 @@
           <a class="navbar-brand">Sphere</a>
         </div>
         <ul class="nav navbar-nav">
-          <li class="active"><a href="main.php?first=a">Home</a></li>
-          <li><a href="view-about.php">About</a></li>
+          <li><a href="main.php?first=a">Home</a></li>
+          <li class="active"><a href="view-about.php">About</a></li>
           <li><a href="logic-exit.php">Exit</a></li>
         </ul>
       </div>
@@ -23,7 +23,7 @@
 
     <main>
         <div class="container">
-          <h3>404 Sorry... The page you ask for does not exists</h3>
+          <h3>Our project is about collecting statistics from apps usage</h3>
         </div>
     </main>
 </body>

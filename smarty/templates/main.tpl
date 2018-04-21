@@ -14,8 +14,8 @@
           <a class="navbar-brand">Sphere</a>
         </div>
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
+          <li class="active"><a href="main.php?first=a">Home</a></li>
+          <li><a href="view-about.php">About</a></li>
           <li><a href="logic-exit.php">Exit</a></li>
         </ul>
       </div>
