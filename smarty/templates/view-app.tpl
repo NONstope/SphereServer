@@ -33,6 +33,15 @@
           </p>
           <p>Bugs found: {$bugs_amt.value}</p>
         </div>
+        <div id="view-app-reviews" class="container">
+            <p>Reviews</p>
+            {foreach from = $bugs_lst item = $data}
+                <form>
+                    <p>User: {$data.login}</p>
+                    <textarea class="view-review" readonly>{$data.value}</textarea>
+                </form>
+            {/foreach}
+        </div>
     </main>
 </body>
 </html>
