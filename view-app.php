@@ -19,7 +19,8 @@ if (!empty($app)) {
     $smarty->assign("app", $app);
     $smarty->assign("mark_avg", $mark_avg);
     $smarty->assign("bugs_amt", $bugs_amt);
-    $smarty->assign("bugs_lst", $bugs_lst);
+    $smarty->assign("bugs_lst", isset($bugs_lst) ? $bugs_lst : array());
+    $smarty->assign("admin", $_SESSION["user_md"] == "admin");
     $smarty->display("view-app.tpl");
 } else {
     $smarty->display("view-error.tpl");

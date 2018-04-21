@@ -34,13 +34,24 @@
           <p>Bugs found: {$bugs_amt.value}</p>
         </div>
         <div id="view-app-reviews" class="container">
-            <p>Reviews</p>
-            {foreach from = $bugs_lst item = $data}
-                <form>
-                    <p>User: {$data.login}</p>
-                    <textarea class="view-review" readonly>{$data.value}</textarea>
-                </form>
-            {/foreach}
+            <h3>Reviews</h3>
+            {if !empty($bugs_lst)}
+                {foreach from = $bugs_lst item = $data}
+                    <form action="remove-review.php" method="post">
+                        <input type="hidden" name="review" value="{$data.user_id}+{$data.app_id}">
+                        <p>
+                            <strong>
+                                <em>User: {$data.login}</em>
+                            </strong>
+                            {if !$admin}
+                            <input type="submit" value="Remove" />
+                            {/if}
+                        </p>
+                        <p class="view-review" readonly>{$data.value}</p>
+                    </form>
+                {/foreach}
+            {else}<p>No reviews found</p>
+            {/if}
         </div>
     </main>
 </body>
