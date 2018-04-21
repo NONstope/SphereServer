@@ -23,7 +23,13 @@
 
     <main>
         <div id="view-app-desc" class="container">
-          <h3>Info about {$app.name}</h3>
+            <form action="remove-app.php" method="post">
+                <h3>Info about {$app.name}</h3>
+                {if !$admin}
+                    <input type="hidden" name="appid" value="{$app.id}">
+                    <input type="submit" value="Exclude from statistics" />
+                {/if}
+            </form>
           <p>Average mark:
               {if $mark_avg.value == NULL}
                   0

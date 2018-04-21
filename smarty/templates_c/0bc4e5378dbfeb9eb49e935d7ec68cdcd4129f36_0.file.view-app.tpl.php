@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2018-04-21 17:04:01
+/* Smarty version 3.1.30, created on 2018-04-21 17:19:51
   from "C:\wamp64\www\statserver\smarty\templates\view-app.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5adb6f019d3578_20353969',
+  'unifunc' => 'content_5adb72b755ca16_75850347',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0bc4e5378dbfeb9eb49e935d7ec68cdcd4129f36' => 
     array (
       0 => 'C:\\wamp64\\www\\statserver\\smarty\\templates\\view-app.tpl',
-      1 => 1524330239,
+      1 => 1524331188,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5adb6f019d3578_20353969 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5adb72b755ca16_75850347 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -47,8 +47,15 @@ function content_5adb6f019d3578_20353969 (Smarty_Internal_Template $_smarty_tpl)
 
     <main>
         <div id="view-app-desc" class="container">
-          <h3>Info about <?php echo $_smarty_tpl->tpl_vars['app']->value['name'];?>
+            <form action="remove-app.php" method="post">
+                <h3>Info about <?php echo $_smarty_tpl->tpl_vars['app']->value['name'];?>
 </h3>
+                <?php if (!$_smarty_tpl->tpl_vars['admin']->value) {?>
+                    <input type="hidden" name="appid" value="<?php echo $_smarty_tpl->tpl_vars['app']->value['id'];?>
+">
+                    <input type="submit" value="Exclude from statistics" />
+                <?php }?>
+            </form>
           <p>Average mark:
               <?php if ($_smarty_tpl->tpl_vars['mark_avg']->value['value'] == NULL) {?>
                   0
