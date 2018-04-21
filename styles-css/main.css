@@ -6,3 +6,8 @@ html, body {
 div#app-list {
     margin-top: 30px;
 }
+
+div#view-app-desc {
+    border: 5px double;
+    border-radius: 2px;
+}

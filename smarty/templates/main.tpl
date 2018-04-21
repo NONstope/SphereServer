@@ -60,7 +60,7 @@
             {if !empty($apps)}
                 {foreach from = $apps item = app}
                     <form>
-                        <a href="#">{$app.name}</a>
+                        <a href="view-app.php?appid={$app.id}">{$app.name}</a>
                     </form>
                 {/foreach}
             {else}

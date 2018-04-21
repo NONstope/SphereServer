@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2018-04-21 12:34:54
+/* Smarty version 3.1.30, created on 2018-04-21 12:44:00
   from "C:\wamp64\www\statserver\smarty\templates\main.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5adb2fee4f7879_08107829',
+  'unifunc' => 'content_5adb32107dce44_56361273',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f6e5a0e143b42d4a8b6117586f00b94dcc27288f' => 
     array (
       0 => 'C:\\wamp64\\www\\statserver\\smarty\\templates\\main.tpl',
-      1 => 1524314091,
+      1 => 1524314630,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5adb2fee4f7879_08107829 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5adb32107dce44_56361273 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -89,7 +89,8 @@ if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['app']->value) {
 ?>
                     <form>
-                        <a href="#"><?php echo $_smarty_tpl->tpl_vars['app']->value['name'];?>
+                        <a href="view-app.php?appid=<?php echo $_smarty_tpl->tpl_vars['app']->value['id'];?>
+"><?php echo $_smarty_tpl->tpl_vars['app']->value['name'];?>
 </a>
                     </form>
                 <?php
