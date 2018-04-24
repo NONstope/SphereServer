@@ -14,9 +14,11 @@ if (empty($user) && empty($admin)) {
     $salt = $user["salt"];
     $pass = md5(md5(md5($salt).md5($_POST["pass"])));
     if ($pass == $user["pass"]) {
-        session_start();
-        $_SESSION["user_id"] = $user["id"];
-        $_SESSION["user_md"] = "user";
+        if ($_POST["mode"] == "direct") {
+            session_start();
+            $_SESSION["user_id"] = $user["id"];
+            $_SESSION["user_md"] = "user";
+        }
         echo "Success";
     } else {
         echo "Failed";
@@ -25,9 +27,13 @@ if (empty($user) && empty($admin)) {
     $salt = $admin["salt"];
     $pass = md5(md5(md5($salt).md5($_POST["pass"])));
     if ($pass == $admin["pass"]) {
-        session_start();
-        $_SESSION["user_id"] = $admin["id"];
-        $_SESSION["user_md"] = "admin";
+        if ($_POST["mode"] == "direct") {
+            session_start();
+            $_SESSION["user_id"] = $admin["id"];
+            $_SESSION["user_md"] = "admin";
+        } else if ($_POST["mode"] == "remote") {
+            echo "Failed";
+        }
         echo "Success";
     } else {
         echo "Failed";

@@ -31,18 +31,18 @@
                 {/if}
             </form>
           <p>Average mark:
-              {if $mark_avg.value == NULL}
+              {if $mark_avg.mark == NULL}
                   0
               {else}
-                  {$mark_avg.value}
+                  {$mark_avg.mark}
               {/if}
           </p>
           <p>Bugs found: {$bugs_amt.value}</p>
         </div>
-        <div id="view-app-reviews" class="container">
+        <div id="view-app-bugs" class="container">
             <h3>Reviews</h3>
-            {if !empty($bugs_lst)}
-                {foreach from = $bugs_lst item = $data}
+            {if !empty($reviews_lst)}
+                {foreach from = $reviews_lst item = $data}
                     <form action="remove-review.php" method="post">
                         <input type="hidden" name="review" value="{$data.user_id}+{$data.app_id}">
                         <p>
@@ -50,13 +50,34 @@
                                 <em>User: {$data.login}</em>
                             </strong>
                             {if $admin}
-                            <input type="submit" value="Remove" />
+                                <input type="submit" value="Remove" />
+                            {/if}
+                        </p>
+                        <p class="view-review" readonly>Mark: {$data.mark}</p>
+                        <p class="view-review" readonly>{$data.review}</p>
+                    </form>
+                {/foreach}
+            {else}<p>No reviews found</p>
+            {/if}
+        </div>
+        <div id="view-app-bugs" class="container">
+            <h3>Bugs</h3>
+            {if !empty($bugs_lst)}
+                {foreach from = $bugs_lst item = $data}
+                    <form action="remove-bug.php" method="post">
+                        <input type="hidden" name="bug" value="{$data.user_id}+{$data.app_id}">
+                        <p>
+                            <strong>
+                                <em>User: {$data.login}</em>
+                            </strong>
+                            {if $admin}
+                                <input type="submit" value="Remove" />
                             {/if}
                         </p>
                         <p class="view-review" readonly>{$data.value}</p>
                     </form>
                 {/foreach}
-            {else}<p>No reviews found</p>
+            {else}<p>No bugs found</p>
             {/if}
         </div>
     </main>

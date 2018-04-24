@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2018-04-21 17:38:22
+/* Smarty version 3.1.30, created on 2018-04-22 09:22:10
   from "C:\wamp64\www\statserver\smarty\templates\view-app.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5adb770e4be634_54283565',
+  'unifunc' => 'content_5adc5442e52cd5_85703921',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0bc4e5378dbfeb9eb49e935d7ec68cdcd4129f36' => 
     array (
       0 => 'C:\\wamp64\\www\\statserver\\smarty\\templates\\view-app.tpl',
-      1 => 1524332244,
+      1 => 1524388927,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5adb770e4be634_54283565 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5adc5442e52cd5_85703921 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -57,21 +57,21 @@ function content_5adb770e4be634_54283565 (Smarty_Internal_Template $_smarty_tpl)
                 <?php }?>
             </form>
           <p>Average mark:
-              <?php if ($_smarty_tpl->tpl_vars['mark_avg']->value['value'] == NULL) {?>
+              <?php if ($_smarty_tpl->tpl_vars['mark_avg']->value['mark'] == NULL) {?>
                   0
               <?php } else { ?>
-                  <?php echo $_smarty_tpl->tpl_vars['mark_avg']->value['value'];?>
+                  <?php echo $_smarty_tpl->tpl_vars['mark_avg']->value['mark'];?>
 
               <?php }?>
           </p>
           <p>Bugs found: <?php echo $_smarty_tpl->tpl_vars['bugs_amt']->value['value'];?>
 </p>
         </div>
-        <div id="view-app-reviews" class="container">
+        <div id="view-app-bugs" class="container">
             <h3>Reviews</h3>
-            <?php if (!empty($_smarty_tpl->tpl_vars['bugs_lst']->value)) {?>
+            <?php if (!empty($_smarty_tpl->tpl_vars['reviews_lst']->value)) {?>
                 <?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['bugs_lst']->value, 'data');
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['reviews_lst']->value, 'data');
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['data']->value) {
 ?>
@@ -85,7 +85,42 @@ foreach ($_from as $_smarty_tpl->tpl_vars['data']->value) {
 </em>
                             </strong>
                             <?php if ($_smarty_tpl->tpl_vars['admin']->value) {?>
-                            <input type="submit" value="Remove" />
+                                <input type="submit" value="Remove" />
+                            <?php }?>
+                        </p>
+                        <p class="view-review" readonly>Mark: <?php echo $_smarty_tpl->tpl_vars['data']->value['mark'];?>
+</p>
+                        <p class="view-review" readonly><?php echo $_smarty_tpl->tpl_vars['data']->value['review'];?>
+</p>
+                    </form>
+                <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
+?>
+
+            <?php } else { ?><p>No reviews found</p>
+            <?php }?>
+        </div>
+        <div id="view-app-bugs" class="container">
+            <h3>Bugs</h3>
+            <?php if (!empty($_smarty_tpl->tpl_vars['bugs_lst']->value)) {?>
+                <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['bugs_lst']->value, 'data');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['data']->value) {
+?>
+                    <form action="remove-bug.php" method="post">
+                        <input type="hidden" name="bug" value="<?php echo $_smarty_tpl->tpl_vars['data']->value['user_id'];?>
++<?php echo $_smarty_tpl->tpl_vars['data']->value['app_id'];?>
+">
+                        <p>
+                            <strong>
+                                <em>User: <?php echo $_smarty_tpl->tpl_vars['data']->value['login'];?>
+</em>
+                            </strong>
+                            <?php if ($_smarty_tpl->tpl_vars['admin']->value) {?>
+                                <input type="submit" value="Remove" />
                             <?php }?>
                         </p>
                         <p class="view-review" readonly><?php echo $_smarty_tpl->tpl_vars['data']->value['value'];?>
@@ -97,7 +132,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['data']->value) {
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 ?>
 
-            <?php } else { ?><p>No reviews found</p>
+            <?php } else { ?><p>No bugs found</p>
             <?php }?>
         </div>
     </main>

@@ -10,7 +10,8 @@ function tryLogin() {
     } else {
         $.post("logic-login.php",
             { login: $("#login-login").val(),
-              pass : $("#login-passw").val() },
+              pass : $("#login-passw").val(),
+              mode : "direct" },
               function(data) {
                   switch (data) {
                     case "Failed":

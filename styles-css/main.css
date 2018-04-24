@@ -7,18 +7,18 @@ div#app-list {
     margin-top: 30px;
 }
 
-div#view-app-desc, div#view-app-reviews {
+div#view-app-desc, div#view-app-bugs, div#view-app-reviews {
     border-top: 3px solid #9d9ea0;
     border-left: 3px solid #9d9ea0;
     border-right: 3px solid #3a3b3d;
     border-bottom: 3px solid #3a3b3d;
 }
 
-div#view-app-reviews {
+div#view-app-bugs, div#view-app-reviews {
     margin-top: 30px;
 }
 
-div#view-app-reviews form {
+div#view-app-bugs, div#view-app-reviews form {
     margin-top: 15px;
     margin-bottom: 25px;
 }
